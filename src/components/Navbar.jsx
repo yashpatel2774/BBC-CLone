@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 h-full w-[250px] bg-white shadow-md z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-[250px] hover:cursor-pointer bg-white shadow-md z-50 transform transition-transform duration-300 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -53,13 +53,13 @@ const Navbar = () => {
       </div>
 
       <div className="sticky top-0 z-30 bg-white">
-        <div className="flex justify-between items-center px-4 py-2 mt-[110px]">
-         
-          <button onClick={toggleSidebar}>
+        <div className="flex items-center justify-between px-4 py-2 mt-[110px]">
+        
+          <button className='hover:cursor-pointer' onClick={toggleSidebar}>
             {sidebarOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
 
-          <div className="flex gap-2">
+          <div className="flex gap-1 md:absolute md:left-1/2 md:-translate-x-1/2">
             <div className="w-10 h-10 bg-black flex justify-center items-center rounded-2xl">
               <span className="text-white text-xl font-bold">B</span>
             </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="hidden md:flex gap-3">
             <button className='bg-black text-white rounded-lg px-4 py-2 font-bold hover:bg-[#3A3C3E]'>
               <Link to='/register'>Register</Link>
             </button>
@@ -83,7 +83,7 @@ const Navbar = () => {
 
         <div className='border border-gray-500 mt-2'></div>
 
-        <div className='flex items-center justify-center mt-1'>
+        <div className='hidden md:flex items-center justify-center mt-1'>
           <nav>
             <ul className="flex flex-wrap justify-center items-center gap-3 text-sm font-bold">
               <li><Link className="hover:bg-gray-600 hover:text-white hover:ring-1 px-2 py-1" to="/">Home</Link></li>
