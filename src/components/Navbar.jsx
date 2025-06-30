@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 h-full w-[250px] hover:cursor-pointer bg-white shadow-md z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-full md:w-[250px] bg-white shadow-md z-50 transform transition-transform duration-300 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -54,7 +54,6 @@ const Navbar = () => {
 
       <div className="sticky top-0 z-30 bg-white">
         <div className="flex items-center justify-between px-4 py-2 mt-[110px]">
-        
           <button className='hover:cursor-pointer' onClick={toggleSidebar}>
             {sidebarOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
